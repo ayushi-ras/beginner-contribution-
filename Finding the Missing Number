@@ -1,0 +1,17 @@
+function findMissingNumbers(nums) {
+    const number = nums.length;
+
+    // Calculate the expected sum of all numbers from 0 to n
+    const expSum = (number * (number + 1)) / 2;
+    
+    // Calculate the actual sum of the given numbers
+    const actSum = nums.reduce((acc, num) => acc + num, 0);
+    
+    // The missing number is the difference between the expected and actual sums
+    return expSum - actSum;
+}
+
+// Example usage:
+const nums = [3, 0, 1];
+const missingNumber = findMissingNumbers(nums);
+console.log(missingNumber);  // Output: 2
