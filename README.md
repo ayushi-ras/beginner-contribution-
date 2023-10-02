@@ -37,6 +37,7 @@ To earn your Hacktoberfest tee or tree reward, you must register and make four v
 -   Anything valuable.
 
 ## Steps For Contribution
+[read CONTRIBUTING.md](https://github.com/ayushi-ras/Hacktoberfest2023/CONTRIBUTING.md)
 
     1. Fork this repo
     2. Star this repo
