@@ -44,6 +44,11 @@ To earn your Hacktoberfest tee or tree reward, you must register and make four v
     4. commit the code
     5. Make pull request
 ***
+### Project Contributors
+<a href="https://github.com/ayushi-ras/JS-Game/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=ayushi-ras/JS-Game" />
+</a>
+
 <h2 align="center">
     <p>
         Thank You
