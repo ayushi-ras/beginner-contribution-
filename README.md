@@ -44,6 +44,28 @@ To earn your Hacktoberfest tee or tree reward, you must register and make four v
     4. commit the code
     5. Make pull request
 ***
+## Avoid Conflicts {Syncing your fork}
+
+An easy way to avoid conflicts is to add an 'upstream' for your git repo, as other PR's may be merged while you're working on your branch/fork.   
+
+```terminal
+git remote add upstream https://github.com/fineanmol/Hacktoberfest2022
+```
+
+You can verify that the new remote has been added by typing
+```terminal
+git remote -v
+```
+
+To pull any new changes from your parent repo simply run
+```terminal
+git merge upstream/master
+```
+
+This will give you any eventual conflicts and allow you to easily solve them in your repo. It's a good idea to use it frequently in between your own commits to make sure that your repo is up to date with its parent.
+
+For more information on syncing forks [read this article from Github](https://help.github.com/articles/syncing-a-fork/).
+
 ### Project Contributors
 <a href="https://github.com/ayushi-ras/Hacktoberfest2023/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=ayushi-ras/Hacktoberfest2023" />
