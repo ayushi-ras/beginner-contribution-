@@ -1,0 +1,49 @@
+import pygame as pgame
+from random import randrange
+
+window = 900
+title_size = 50
+range = (title_size // 2, window - title_size // 2, title_size)
+get_random_position = lambda: [randrange(*range), randrange(*range)]
+snake = pgame.rect.Rect([0, 0, title_size - 2, title_size - 2])
+snake.center = get_random_position()
+length = 1
+segments=[snake.copy()]
+snake_dir = (0, 0)
+time, time_step = 0,110
+food = snake.copy()
+food.center = get_random_position()
+clock = pgame.time.Clock()
+screen = pgame.display.set_mode([window] * 2)
+
+while True:
+    for i in pgame.event.get():
+        if i.type == pgame.QUIT:
+            exit()
+        if i.type == pgame.KEYDOWN:
+            if i.key == pgame.K_w:
+                snake_dir = (0,-title_size)
+            if i.key == pgame.K_s:
+                snake_dir = (0,title_size)
+            if i.key == pgame.K_a:
+                snake_dir = (-title_size,0)
+            if i.key == pgame.K_d:
+                snake_dir = (title_size, 0)
+    screen.fill('black')
+    if snake.left < 0 or snake.right >window or snake.top < 0 or snake.bottom> window:
+        snake.center, food.center = get_random_position(), get_random_position()
+        length, snake_dir= 1,(0,0)
+        segments = [snake.copy()]
+    if snake.center == food.center:
+        food.center = get_random_position()
+        length += 1
+    pgame.draw.rect(screen, "red", food)
+    [pgame.draw.rect(screen, "green", segment) for segment in segments]
+    time_now = pgame.time.get_ticks()
+    if time_now - time > time_step:
+        time = time_now
+        snake.move_ip(snake_dir)
+        segments.append(snake.copy())
+        segments = segments[-length:]
+    pgame.display.flip()
+    clock.tick(60)
