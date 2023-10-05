@@ -1,0 +1,15 @@
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+# Input from user
+arr = list(map(int, input("Enter space-separated integers: ").split()))
+
+# Call bubble_sort function
+bubble_sort(arr)
+
+# Display sorted output
+print("Bubble Sorted Array:", arr)
